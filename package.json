@@ -1,6 +1,6 @@
 {
   "name": "pizza",
-  "type": "module",
+  "type": "module", 
   "private": true,
   "scripts": {
     "build": "prisma generate && nuxt build",
@@ -8,11 +8,10 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "prisma generate"
-    
   },
-"engines": {
-  "node": ">=20"
-},
+  "engines": {
+    "node": ">=20"
+  },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^7.1.0",
     "@fortawesome/vue-fontawesome": "^3.1.2",

@@ -14,15 +14,15 @@ export default defineNuxtConfig({
 
   // Build configuration - FIXED
   build: {
-    transpile: ['@prisma/client']
+    transpile: ['@prisma/client']  // Process Prisma code properly
   },
 
   // Nitro configuration - FIXED
   nitro: {
     preset: 'vercel',
-    // Bundle Prisma instead of externalizing it
+    // Include Prisma in the bundle instead of excluding it
     externals: {
-      inline: ['@prisma/client']
+      inline: ['@prisma/client']  // This ensures Prisma is bundled
     }
   },
 
