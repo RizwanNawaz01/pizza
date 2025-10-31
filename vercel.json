@@ -1,6 +1,3 @@
 {
-  "outputDirectory": ".output",
-  "includeFiles": [
-    "node_modules/.prisma/client/**"
-  ]
+  "outputDirectory": ".output"
 }
