@@ -1,4 +1,5 @@
-import prisma  from '../../utils/prisma' 
+// import prisma  from '../../utils/prisma' 
+import prisma from '~/server/utils/prisma'
 import { subDays, format } from 'date-fns'
 
 export default defineEventHandler(async () => {

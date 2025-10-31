@@ -1,5 +1,7 @@
 
-import prisma  from '../../../utils/prisma' 
+//import prisma  from '../../../utils/prisma'
+
+import prisma from '~/server/utils/prisma' 
 import { defineEventHandler, createError } from 'h3'
 
 

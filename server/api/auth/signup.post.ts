@@ -1,5 +1,6 @@
 // server/api/auth/signup.post.ts
-import prisma  from '../../utils/prisma' 
+// import prisma  from '../../utils/prisma' 
+import prisma from '~/server/utils/prisma'
 
 import { hashPassword, generateToken } from '../../utils/auth'
 

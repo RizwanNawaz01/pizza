@@ -1,6 +1,8 @@
 import { readMultipartFormData, createError } from 'h3'
 
-import prisma  from '../../../utils/prisma' 
+//import prisma  from '../../../utils/prisma'
+
+import prisma from '~/server/utils/prisma' 
 
 export default defineEventHandler(async (event) => {
   const id = Number(event.context.params?.id)

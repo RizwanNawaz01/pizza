@@ -1,7 +1,8 @@
 import { readMultipartFormData, createError } from 'h3'
 import fs from 'fs'
 import path from 'path'
-import prisma  from '../../utils/prisma' 
+// import prisma  from '../../utils/prisma'
+ import prisma from '~/server/utils/prisma'
 
 export default defineEventHandler(async (event) => {
       

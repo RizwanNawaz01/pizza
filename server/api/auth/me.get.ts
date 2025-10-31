@@ -1,4 +1,5 @@
-import prisma  from '../../utils/prisma' 
+// import prisma  from '../../utils/prisma' 
+import prisma from '~/server/utils/prisma'
 
 export default defineEventHandler(async (event) => {
   const token = getCookie(event, 'auth_token')

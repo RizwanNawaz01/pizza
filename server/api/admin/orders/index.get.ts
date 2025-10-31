@@ -1,5 +1,7 @@
 import { createError } from 'h3'
-import prisma  from '../../../utils/prisma'
+//import prisma  from '../../../utils/prisma'
+
+import prisma from '~/server/utils/prisma'
 
 export default defineEventHandler(async () => {
   try {
