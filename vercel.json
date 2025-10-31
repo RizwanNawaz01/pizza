@@ -1,11 +1,6 @@
 {
-  "functions": {
-    ".output/server/index.mjs": {
-      "includeFiles": "node_modules/.prisma/client/**"
-    },
-    ".output/server/chunks/routes/api/**": {
-      "includeFiles": "node_modules/.prisma/client/**"
-    }
-  },
-  "outputDirectory": ".output"
+  "outputDirectory": ".output",
+  "includeFiles": [
+    "node_modules/.prisma/client/**"
+  ]
 }
