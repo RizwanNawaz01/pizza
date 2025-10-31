@@ -12,26 +12,20 @@ export default defineNuxtConfig({
     ],
   },
 
-  // Build configuration - FIXED
+  // Remove all Prisma transpilation - we'll use Data Proxy instead
   build: {
-    transpile: ['@prisma/client']  // Process Prisma code properly
+    // Remove '@prisma/client' from transpile
   },
 
-  // Nitro configuration - FIXED
   nitro: {
     preset: 'vercel',
-    // Include Prisma in the bundle instead of excluding it
-    externals: {
-      inline: ['@prisma/client']  // This ensures Prisma is bundled
-    }
+    // Remove all externals configuration
   },
 
   modules: ['@nuxt/image', '@nuxt/icon','@pinia/nuxt'], 
   
   runtimeConfig: {
     jwtSecret: process.env.JWT_SECRET || 'your-secret-key',
-    
-    // Public keys (exposed to client)
     public: {
       apiBase: process.env.API_BASE || '/api'
     }
