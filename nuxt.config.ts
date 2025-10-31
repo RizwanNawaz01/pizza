@@ -1,4 +1,4 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
+// nuxt.config.ts
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineNuxtConfig({
@@ -12,56 +12,17 @@ export default defineNuxtConfig({
     ],
   },
 
-  nitro: {
-    // Completely externalize Prisma
-    externals: {
-      inline: []
-    },
-    alias: {
-      '.prisma/client': './.prisma/client'
-    },
-    moduleSideEffects: [
-      '@prisma/client'
-    ],
-    rollupConfig: {
-      external: ['@prisma/client', '.prisma/client']
-    },
-     vercel: {
-    config: {
-      functions: {
-        'api/**': {
-          runtime: 'nodejs20.x'
-        }
-      }
-    }
-  }
+  // Build configuration - FIXED
+  build: {
+    transpile: ['@prisma/client']
   },
 
-  // Add this hook to force externalization
-  hooks: {
-    'nitro:config': (nitroConfig) => {
-      nitroConfig.externals = nitroConfig.externals || {}
-      nitroConfig.externals.inline = nitroConfig.externals.inline || []
-      // Remove @prisma/client from inline if it exists
-      nitroConfig.externals.inline = nitroConfig.externals.inline.filter(
-        (i: string) => !i.includes('@prisma/client')
-      )
-      
-      // Add to external
-      if (!nitroConfig.rollupConfig) {
-        nitroConfig.rollupConfig = {}
-      }
-      if (!nitroConfig.rollupConfig.external) {
-        nitroConfig.rollupConfig.external = []
-      }
-      
-      const external = nitroConfig.rollupConfig.external as string[]
-      if (!external.includes('@prisma/client')) {
-        external.push('@prisma/client')
-      }
-      if (!external.includes('.prisma/client')) {
-        external.push('.prisma/client')
-      }
+  // Nitro configuration - FIXED
+  nitro: {
+    preset: 'vercel',
+    // Bundle Prisma instead of externalizing it
+    externals: {
+      inline: ['@prisma/client']
     }
   },
 
