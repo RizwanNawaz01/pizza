@@ -25,7 +25,16 @@ export default defineNuxtConfig({
     ],
     rollupConfig: {
       external: ['@prisma/client', '.prisma/client']
+    },
+     vercel: {
+    config: {
+      functions: {
+        'api/**': {
+          runtime: 'nodejs20.x'
+        }
+      }
     }
+  }
   },
 
   // Add this hook to force externalization
