@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "index.mjs": {
+      "includeFiles": "node_modules/.prisma/client/**"
+    }
+  }
+}
